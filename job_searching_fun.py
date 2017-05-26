@@ -62,7 +62,21 @@ def open_page(url):
 		user = useragent()
 		headers = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64)\
 			AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36'}
+		r = requests.get(url, headers = headers, timeou = 10)
+		r.raise_for_status()
+		r.encoding = r.apparent_encoding
+		return r.text
+	except Exception as e:
+		print('Error:',e)
+		time3 = time.strftime("%Y-%m-%d %H:%M:%S",time.localtime())
+		content = time3 + ' ' + str(e)
+		logpath = '51joblog.txt'
+		with open(logpath, 'a') as f:
+			f.write(content + "\n")
+		pass
 		
+def write_xls(html, k, temp, keyword):
+	
 
 
 
