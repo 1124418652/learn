@@ -76,7 +76,10 @@ def open_page(url):
 		pass
 		
 def write_xls(html, k, temp, keyword):
-	
+	time3 = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+	print('正在爬取第'+str(k+1)+'页'+time3)
+	soup = bs(html, 'lxml')
+	name = soup.findAll('a', href = re.compile())
 
 
 
