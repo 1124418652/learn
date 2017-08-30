@@ -50,10 +50,10 @@ def get_urllist(keyword):         #get uniform resource locator
 	page = 1
 	d = 0
 	while d < 90:
-		urllist[d] = 'http://sou.zhaopin.com/jobs/searchresult.ashx?ji=选择地区&kw='+keyword+
+		urllist[d] = 'http://sou.zhaopin.com/jobs/searchresult.ashx?ji=选择地区&kw='+keyword+\
 			'&isadv=0&sg=91f598e913974f4687a7bfb86b54c91d&p='+str(page)
-		d = d++
-		page = page++
+		d = d+1
+		page = page+1
 	return urllist
 	
 def open_page(url):
